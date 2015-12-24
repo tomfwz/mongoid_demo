@@ -19,4 +19,5 @@ group :development do
   gem 'spring'
 end
 
+gem 'slim-rails'
 gem 'mongoid', '~> 5.0.0'
