@@ -2,7 +2,7 @@ h1 Editing article
 
 == render 'form'
 
-= link_to 'Show', @article
+= link_to 'Show', person_article_path(@person, @article)
 '|
-= link_to 'Back', articles_path
+= link_to 'Back', person_articles_path(@person)
 

@@ -10,14 +10,14 @@ table
       th
 
   tbody
-    - @articles.each do |article|
+    - @person.articles.each do |article|
       tr
         td = article.name
         td = article.content
-        td = link_to 'Show', article
-        td = link_to 'Edit', edit_article_path(article)
-        td = link_to 'Destroy', article, data: { :confirm => 'Are you sure?' }, :method => :delete
+        td = link_to 'Show', person_article_path(@person, article)
+        td = link_to 'Edit', edit_person_article_path(@person, article)
+        td = link_to 'Destroy', [@person, article], data: { :confirm => 'Are you sure?' }, :method => :delete
 
 br
 
-= link_to 'New Article', new_article_path
+= link_to 'New Article', new_person_article_path
