@@ -13,7 +13,7 @@ table.table.table-bordered.table-striped
     tbody
       - @people.each do |person|
         tr
-          td = person.first_name
+          td = link_to person.first_name, person_path(person)
           td = person.last_name
           td = person.email
           td = person.notes
