@@ -12,6 +12,10 @@ class PeopleController < ApplicationController
     end
   end
 
+  def index
+    @people = Person.all
+  end
+
   private
 
   def person_params

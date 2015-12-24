@@ -1,0 +1,23 @@
+h1 People
+.well
+  = link_to "New Person", new_person_path, class: 'btn btn-default'
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th First Name
+      th Last Name
+      th Email
+      th Notes
+      th &nbsp;
+      th &nbsp;
+    tbody
+      - @people.each do |person|
+        tr
+          td = person.first_name
+          td = person.last_name
+          td = person.email
+          td = person.notes
+          td
+            = link_to "Edit", edit_person_path(person), class: "btn btn-default"
+          td
+            = button_to "Delete", person, method: :delete, data: { confirm: "Are you sure you wish to delete \#{person.first_name} \#{person.last_name}?" }, class: "btn btn-danger"
