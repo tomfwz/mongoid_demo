@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :find_person, only: [:edit, :update, :destroy]
+  before_action :find_person, only: [:edit, :update, :destroy, :show]
   
   def new
     @person = Person.new
@@ -16,6 +16,9 @@ class PeopleController < ApplicationController
 
   def index
     @people = Person.all
+  end
+
+  def show
   end
 
   def edit
