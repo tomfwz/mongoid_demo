@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources 'people'
+  resources 'people' do
+    resources 'articles'
+  end
+
   root 'people#index'
 end
