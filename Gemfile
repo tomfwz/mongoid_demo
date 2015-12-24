@@ -20,4 +20,5 @@ group :development do
 end
 
 gem 'slim-rails'
+gem 'bootstrap-sass'
 gem 'mongoid', '~> 5.0.0'
