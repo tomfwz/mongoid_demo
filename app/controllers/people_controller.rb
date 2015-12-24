@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_action :find_person, only: [:edit, :update, :destroy]
+  
   def new
     @person = Person.new
   end
@@ -16,7 +18,26 @@ class PeopleController < ApplicationController
     @people = Person.all
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    if @person.update_attributes(person_params)
+      redirect_to people_path, notice: 'Person has been updated.'
+    end
+  end
+
+  def destroy
+    @person.destroy
+    rediect_to people_path, notice: 'Person has been deleted.'
+  end
+
   private
+
+  def find_person
+    @person = Person.find(params[:id])
+  end
 
   def person_params
     params.require(:person).permit(:first_name, :last_name, :email, :notes)
